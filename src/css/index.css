@@ -1,0 +1,19 @@
+body{
+    background-color: red;
+    color: #fff;
+}
+#tupian{
+    background-image: url('../images/test1.jpg');
+    width: 100px;
+    height: 100px;
+    background-size: 100% 100%;
+}
+#tupian2{
+    width: 300px;
+    height: 500px;
+    background-image: url('../images/test.jpg');
+    background-size: 100% 100%;
+}
+.a{
+    margin: 0 auto;
+}
