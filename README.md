@@ -1,1 +1,1 @@
-# webpack3Study
+# webpack3
