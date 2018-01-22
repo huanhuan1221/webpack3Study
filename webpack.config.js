@@ -6,21 +6,21 @@ const extractTextPlugin = require('extract-text-webpack-plugin');
 /* var website = {
     publicPath: "/"
 }; */
-var website={};
-if(process.env.type=="build"){
-    website["pubilcPath"]="/";
-}else{
-    website["publicPath"]="/";
+var website = {};
+if (process.env.type == "build") {
+    website["pubilcPath"] = "/";
+} else {
+    website["publicPath"] = "/";
 }
 const glob = require('glob');
 const PurifyCSSPlugin = require('purifycss-webpack');
 const entryList = require("./webpack_config/entry_webpack.js");
-const webpack=require('webpack');
+const webpack = require('webpack');
 module.exports = {
     entry: {
         //entry: './src/entry.js',
         //entry2: './src/entry2.js'
-        entry:entryList.path
+        entry: entryList.path
     },
     devtool: 'eval-source-map',
     output: {
@@ -80,10 +80,15 @@ module.exports = {
     ],
     devServer: {
         contentBase: path.resolve(__dirname, 'dist/'),
-        compress:true,
+        compress: true,
         port: 8080,
-        inline:true,
+        inline: true,
         host: '192.168.0.151',
-        disableHostCheck:true,
+        disableHostCheck: true,
+    },
+    watchOptions: {
+        poll: 1000,//监测修改的时间(ms)
+        aggregateTimeout: 500, //防止重复按键，500毫米内算按键一次
+        ignored: /node_modules/,//不监测
     }
 }
